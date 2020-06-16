@@ -1,0 +1,74 @@
+import logging
+
+import tblib.pickling_support
+tblib.pickling_support.install()
+
+from parsl.app.app import AppBase
+from parsl.app.errors import wrap_error
+from parsl.dataflow.dflow import DataFlowKernelLoader
+
+
+logger = logging.getLogger(__name__)
+
+
+def timeout(f, seconds):
+    def wrapper(*args, **kwargs):
+        import threading
+        import ctypes
+        import parsl.app.errors
+
+        def inject_exception(thread):
+            ctypes.pythonapi.PyThreadState_SetAsyncExc(
+                ctypes.c_long(thread),
+                ctypes.py_object(parsl.app.errors.AppTimeout)
+            )
+
+        thread = threading.current_thread().ident
+        timer = threading.Timer(seconds, inject_exception, args=[thread])
+        timer.start()
+        result = f(*args, **kwargs)
+        timer.cancel()
+        return result
+    return wrapper
+
+
+class PythonApp(AppBase):
+    """Extends AppBase to cover the Python App."""
+
+    def __init__(self, func, data_flow_kernel=None, walltime=60, cache=False, executors='all'):
+        super().__init__(
+            wrap_error(func),
+            data_flow_kernel=data_flow_kernel,
+            walltime=walltime,
+            executors=executors,
+            cache=cache
+        )
+
+    def __call__(self, *args, **kwargs):
+        """This is where the call to a python app is handled.
+
+        Args:
+             - Arbitrary
+        Kwargs:
+             - Arbitrary
+
+        Returns:
+                   App_fut
+
+        """
+
+        if self.data_flow_kernel is None:
+            dfk = DataFlowKernelLoader.dfk()
+        else:
+            dfk = self.data_flow_kernel
+
+        walltime = self.kwargs.get('walltime')
+        if walltime is not None:
+            self.func = timeout(self.func, walltime)
+        app_fut = dfk.submit(self.func, *args,
+                             executors=self.executors,
+                             fn_hash=self.func_hash,
+                             cache=self.cache,
+                             **kwargs)
+
+        return app_fut

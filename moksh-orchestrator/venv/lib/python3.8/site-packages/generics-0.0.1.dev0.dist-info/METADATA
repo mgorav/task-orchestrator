@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: generics
+Version: 0.0.1.dev0
+Summary: 
+Author: Artem Malyshev
+Author-email: proofit404@gmail.com
+Requires-Python: >=3.8,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8

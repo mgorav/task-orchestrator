@@ -1,0 +1,83 @@
+Metadata-Version: 2.1
+Name: parsl
+Version: 0.9.0
+Summary: Simple data dependent workflows in Python
+Home-page: https://github.com/Parsl/parsl
+Author: The Parsl Team
+Author-email: parsl@googlegroups.com
+License: Apache 2.0
+Download-URL: https://github.com/Parsl/parsl/archive/0.9.0.tar.gz
+Keywords: Workflows,Scientific computing
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Requires-Dist: pyzmq (>=17.1.2)
+Requires-Dist: typeguard
+Requires-Dist: ipyparallel
+Requires-Dist: globus-sdk
+Requires-Dist: dill
+Requires-Dist: tblib
+Requires-Dist: ipykernel
+Requires-Dist: requests
+Requires-Dist: paramiko
+Requires-Dist: psutil (>=5.5.1)
+Provides-Extra: all
+Requires-Dist: sqlalchemy (!=1.3.4,>=1.3.0) ; extra == 'all'
+Requires-Dist: sqlalchemy-utils ; extra == 'all'
+Requires-Dist: pydot ; extra == 'all'
+Requires-Dist: networkx ; extra == 'all'
+Requires-Dist: Flask (>=1.0.2) ; extra == 'all'
+Requires-Dist: flask-sqlalchemy ; extra == 'all'
+Requires-Dist: pandas ; extra == 'all'
+Requires-Dist: plotly ; extra == 'all'
+Requires-Dist: python-daemon ; extra == 'all'
+Requires-Dist: boto3 ; extra == 'all'
+Requires-Dist: kubernetes ; extra == 'all'
+Requires-Dist: oauth-ssh (>=0.9) ; extra == 'all'
+Requires-Dist: mpi4py ; extra == 'all'
+Requires-Dist: nbsphinx ; extra == 'all'
+Requires-Dist: sphinx-rtd-theme ; extra == 'all'
+Requires-Dist: google-auth ; extra == 'all'
+Requires-Dist: google-api-python-client ; extra == 'all'
+Requires-Dist: python-gssapi ; extra == 'all'
+Requires-Dist: azure ; extra == 'all'
+Requires-Dist: msrestazure ; extra == 'all'
+Requires-Dist: work-queue ; extra == 'all'
+Provides-Extra: aws
+Requires-Dist: boto3 ; extra == 'aws'
+Provides-Extra: azure
+Requires-Dist: azure ; extra == 'azure'
+Requires-Dist: msrestazure ; extra == 'azure'
+Provides-Extra: docs
+Requires-Dist: nbsphinx ; extra == 'docs'
+Requires-Dist: sphinx-rtd-theme ; extra == 'docs'
+Provides-Extra: extreme_scale
+Requires-Dist: mpi4py ; extra == 'extreme_scale'
+Provides-Extra: google_cloud
+Requires-Dist: google-auth ; extra == 'google_cloud'
+Requires-Dist: google-api-python-client ; extra == 'google_cloud'
+Provides-Extra: gssapi
+Requires-Dist: python-gssapi ; extra == 'gssapi'
+Provides-Extra: kubernetes
+Requires-Dist: kubernetes ; extra == 'kubernetes'
+Provides-Extra: monitoring
+Requires-Dist: sqlalchemy (!=1.3.4,>=1.3.0) ; extra == 'monitoring'
+Requires-Dist: sqlalchemy-utils ; extra == 'monitoring'
+Requires-Dist: pydot ; extra == 'monitoring'
+Requires-Dist: networkx ; extra == 'monitoring'
+Requires-Dist: Flask (>=1.0.2) ; extra == 'monitoring'
+Requires-Dist: flask-sqlalchemy ; extra == 'monitoring'
+Requires-Dist: pandas ; extra == 'monitoring'
+Requires-Dist: plotly ; extra == 'monitoring'
+Requires-Dist: python-daemon ; extra == 'monitoring'
+Provides-Extra: oauth_ssh
+Requires-Dist: oauth-ssh (>=0.9) ; extra == 'oauth_ssh'
+Provides-Extra: workqueue
+Requires-Dist: work-queue ; extra == 'workqueue'
+
+Simple parallel workflows system for Python
+
+

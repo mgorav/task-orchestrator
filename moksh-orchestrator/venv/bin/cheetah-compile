@@ -1,0 +1,3 @@
+#!/Users/gmalho/Documents/Personal/MyGitHub/moksh-orchestrator/moksh-orchestrator/venv/bin/python
+from Cheetah.CheetahWrapper import _cheetah_compile
+_cheetah_compile()

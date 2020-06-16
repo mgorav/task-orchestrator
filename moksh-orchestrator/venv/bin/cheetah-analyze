@@ -1,0 +1,6 @@
+#!/Users/gmalho/Documents/Personal/MyGitHub/moksh-orchestrator/moksh-orchestrator/venv/bin/python
+
+from Cheetah import DirectiveAnalyzer
+
+if __name__ == '__main__':
+    DirectiveAnalyzer.main()

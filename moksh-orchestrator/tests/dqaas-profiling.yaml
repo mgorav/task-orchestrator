@@ -1,0 +1,20 @@
+pipeline:
+  name: dqaas-proflling
+  type: moksh_orchestrator.framework.impl.orchestrator_impl.SparkOrchestratorImpl
+  unitOfWork: moksh_orchestrator.framework.impl.SparkDataFrame
+  executionContext: moksh_orchestrator.framework.impl.DictExecutionContext
+  steps:
+    - step:
+      name: read-from-hive
+      priority: 1
+      type: moksh_orchestrator.framework.impl.step_impl.HiveReaderImpl
+    - step:
+      name: profling-data
+      priority: 2
+      type: moksh_orchestrator.framework.impl.step_impl.ProfilingImpl
+    - step:
+      name: write-to-elastic-search
+      priority: 3
+      type: moksh_orchestrator.framework.impl.step_impl.ElasticSearchSink
+
+

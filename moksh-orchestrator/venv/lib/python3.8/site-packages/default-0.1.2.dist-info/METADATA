@@ -1,0 +1,27 @@
+Metadata-Version: 2.0
+Name: default
+Version: 0.1.2
+Summary: Merge JSON data with default JSON data
+Home-page: https://github.com/norangmangto/pypi-default
+Author: Beomsoo Jang
+Author-email: norangmangto@gmail.com
+License: GPLv3
+Keywords: default development
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Provides-Extra: dev
+Provides-Extra: test
+
+UNKNOWN
+
+

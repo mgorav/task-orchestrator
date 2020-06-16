@@ -1,0 +1,18 @@
+!!python/object:moksh_orchestrator.framework.impl.orchestrator_impl.OrchestratorImpl
+    name: raw-cleansed
+    type: moksh_orchestrator.framework.impl.orchestrator_impl.OrchestratorImpl
+    unitOfWork: SparkDataFrame
+    executionContext: DictExecutionContext
+    steps:
+       - !!python/object:moksh_orchestrator.framework.impl.step_impl.StepImpl
+       name: read-step
+       priority: 1
+       type: moksh_orchestrator.framework.impl.step_impl.StepImpl
+       - !!python/object:moksh_orchestrator.framework.impl.step_impl.StepImpl
+       name: processor-step
+       priority: 2
+       type: moksh_orchestrator.framework.impl.step_impl.StepImpl
+       - !!python/object:moksh_orchestrator.framework.impl.step_impl.StepImpl
+       name: writer-step
+       priority: 3
+       type: moksh_orchestrator.framework.impl.step_impl.StepImpl

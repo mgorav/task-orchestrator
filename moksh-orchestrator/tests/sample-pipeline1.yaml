@@ -1,0 +1,20 @@
+pipeline:
+  name: raw-cleansed
+  type: moksh_orchestrator.framework.impl.orchestrator_impl.OrchestratorImpl
+  unitOfWork: moksh_orchestrator.framework.impl.SparkDataFrame
+  executionContext: moksh_orchestrator.framework.impl.DictExecutionContext
+  steps:
+    - step:
+      name: read-step
+      priority: 1
+      type: moksh_orchestrator.framework.impl.step_impl.StepImpl
+    - step:
+      name: processor-step
+      priority: 2
+      type: moksh_orchestrator.framework.impl.step_impl.StepImpl
+    - step:
+      name: writer-step
+      priority: 3
+      type: moksh_orchestrator.framework.impl.step_impl.StepImpl
+
+

@@ -1,0 +1,24 @@
+task: include('task',requierd=True)
+
+---
+task:
+  name: str()
+  type: pipeline_type()
+  datasetType: str()
+  executionContextType: str()
+  steps: list(include('step'),required=True)
+---
+step:
+  name: str()
+  priority: int()
+  type: step_type()
+  parallel: bool(required=False)
+  threads: int(required=False)
+  k8s: bool(required=False)
+  parameters: list(map(str(),str()), required=False)
+  exceptionHandler: list(include('exceptionHandler'),required=False)
+---
+exceptionHandler:
+  name: str(required=False)
+  type: str(required=False)
+  parameters: list(map(str(),str()),required=False)

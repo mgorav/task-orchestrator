@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: metaflow
+Version: 2.0.5
+Summary: Metaflow: More Data Science, Less Engineering
+Home-page: UNKNOWN
+Author: Machine Learning Infrastructure Team at Netflix
+Author-email: help@metaflow.org
+License: Apache License 2.0
+Platform: UNKNOWN
+Requires-Dist: click (>=7.0)
+Requires-Dist: requests
+Requires-Dist: boto3
+Requires-Dist: pylint (<2.5.0)
+
+UNKNOWN
+
+

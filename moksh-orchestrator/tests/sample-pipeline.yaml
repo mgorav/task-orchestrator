@@ -1,0 +1,41 @@
+pipeline:
+  name: raw-cleansed
+  type: "Serial"
+  unitOfWork: SparkDataFrame
+  executionContext: DictExecutionContext
+  steps:
+    - step:
+      name: read-step
+      priority: 1
+      type: FileReader
+      parameters:
+        - key1: value1
+      exceptionHandler:
+        - name: read-step-error-handler
+          type: ReadStepErrorHandler
+          parameters:
+            - key1: value1
+    - step:
+      name: processor-step
+      priority: 2
+      type: ProcessorStep
+      parameters:
+        - key1: value1
+      exceptionHandler:
+        - name: processor-step-error-handler
+          type: ProcessorStepErrorHandler
+          parameters:
+            - key1: value1
+    - step:
+      name: writer-step
+      priority: 3
+      type: WriterStep
+      parameters:
+        - key1: value1
+      exceptionHandler:
+        - name: writer-step-error-handler
+          type: WriterStepErrorHandler
+          parameters:
+            - key1: value1
+
+
